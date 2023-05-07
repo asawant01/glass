@@ -59,3 +59,7 @@ def prediction(model, ri, na, mg, al, si, k, ca, ba, fe):
         return "headlamps".upper()
 st.title('Glass Type Predictor')
 st.sidebar.title('Exploratory Data Analysis')
+if st.sidebar.checkbox('Show Raw Data'):
+    st.subheader('Full Data Set')
+    st.dataframe(glass_df)
+    
