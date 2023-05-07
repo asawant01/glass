@@ -67,6 +67,6 @@ features_list = st.sidebar.multiselect('Select X-axis values', ('RI', 'Na', 'Mg'
 st.set_option('deprecation.showPyplotGlobalUse', False)
 for feature in features_list:
   st.subheader(f"scatterplot between {feature} and glass_type")
-  plt.figure(figsize=(12,7)
+  plt.figure(figsize=(12,7))
   sns.scatterplot(x = feature, y = "GlassType", data = glass_df)
   st.pyplot()
