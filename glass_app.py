@@ -93,10 +93,9 @@ if 'Countplot' in plot_types:
     st.pyplot()
 if 'Piechart' in plot_types:
     st.subheader('Piechart')
-    
-    plt.figure(figsize=(15,10))
     pie_data = glass_df['GlassType'].value_counts()
-    plt.pie(pie_data, labela = pie_data.index, autopct = '%1.2f%%', explode = np.linspace(0.06,0.16,6), startangle = 30)
+    plt.figure(figsize=(15,10))
+    plt.pie(pie_data, labels = pie_data.index, autopct = '%1.2f%%', explode = np.linspace(0.06,0.16,6), startangle = 30)
     st.pyplot()
 
     
