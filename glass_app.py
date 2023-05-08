@@ -97,6 +97,13 @@ if 'Piechart' in plot_types:
     plt.figure(figsize=(15,10))
     plt.pie(pie_data, labels = pie_data.index, autopct = '%1.2f%%', explode = np.linspace(0.06,0.16,6), startangle = 30)
     st.pyplot()
+if 'Heatmap' in plot_types:
+    st.subheader('Heatmap')
+    columns = st.sidebar.selectbox('Select X-axis values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+    plt.figure(figsize=(15,10))
+    sns.heatmap(glass_df[columns])
+    st.pyplot()
+    
 
     
 
