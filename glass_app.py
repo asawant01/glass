@@ -79,6 +79,24 @@ if 'Histogram' in plot_types:
     plt.title(f"Histogram for {columns}")
     plt.hist(glass_df[columns], bins = 'sturges', edgecolor = 'black')
     st.pyplot()
-  
+if 'Boxplot' in plot_types:
+    st.subheader('Boxplot')
+    columns = st.sidebar.selectbox('Select X-axis values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+    plt.figure(figsize=(15,10))
+    sns.boxplot(glass_df[columns])
+    st.pyplot()
+if 'Countplot' in plot_types:
+    st.subheader('Countplot')
+    columns = st.sidebar.selectbox('Select X-axis values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+    plt.figure(figsize=(15,10))
+    sns.countplot(glass_df[columns])
+if 'Piechart' in plot_types:
+    st.subheader('Piechart')
+    columns = st.sidebar.selectbox('Select X-axis values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+    plt.figure(figsize=(15,10))
+    pie_data = glass_df['Glass_Type'].value_counts()
+    plt.pie(pie_data, labela = pie_data.index, auto_pct = '%1.2f%%', explode = np.linspace(0.06,0.2,6))
+    st.pyplot()
+
     
 
