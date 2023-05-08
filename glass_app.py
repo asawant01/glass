@@ -93,10 +93,10 @@ if 'Countplot' in plot_types:
     st.pyplot()
 if 'Piechart' in plot_types:
     st.subheader('Piechart')
-    columns = st.sidebar.selectbox('Select X-axis values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
+    
     plt.figure(figsize=(15,10))
     pie_data = glass_df['GlassType'].value_counts()
-    plt.pie(pie_data, labela = pie_data.index, autopct = '%1.2f%%', explode = np.linspace(0.06,0.2,6))
+    plt.pie(pie_data, labela = pie_data.index, autopct = '%1.2f%%', explode = np.linspace(0.06,0.16,6), startangle = 30)
     st.pyplot()
 
     
