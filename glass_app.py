@@ -70,3 +70,6 @@ for feature in features_list:
   plt.figure(figsize=(12,7))
   sns.scatterplot(x = feature, y = "GlassType", data = glass_df)
   st.pyplot()
+st.sidebar.subheader('Visualization selector')
+plot_types = st.sidebar.multiselect('Select the charts or plots',('Histogram','Boxplot','Countplot','Piechart','Heatmap','Pairplot'))
+
