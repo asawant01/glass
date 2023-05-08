@@ -101,7 +101,7 @@ if 'Heatmap' in plot_types:
     st.subheader('Heatmap')
     columns = st.sidebar.selectbox('Select X-axis values', ('RI', 'Na', 'Mg', 'Al', 'Si', 'K', 'Ca', 'Ba', 'Fe'))
     plt.figure(figsize=(15,10))
-    sns.heatmap(glass_df[columns])
+    sns.heatmap(glass_df.corr(), annot = True)
     st.pyplot()
     
 
